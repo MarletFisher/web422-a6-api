@@ -42,6 +42,11 @@ let strategy = new JwtStrategy(jwtOptions, function (jwt_payload, next) {
 passport.use(strategy);
 app.use(passport.initialize());
 
+// test get
+app.get("/", (req, res) => {
+	res.send("Listening");
+});
+
 app.post("/api/user/register", (req, res) => {
 	userService
 		.registerUser(req.body)
