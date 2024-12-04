@@ -44,7 +44,7 @@ app.use(passport.initialize());
 
 // test get
 app.get("/", (req, res) => {
-	res.send("Listening");
+	res.send({ message: "App listening" });
 });
 
 app.post("/api/user/register", (req, res) => {
